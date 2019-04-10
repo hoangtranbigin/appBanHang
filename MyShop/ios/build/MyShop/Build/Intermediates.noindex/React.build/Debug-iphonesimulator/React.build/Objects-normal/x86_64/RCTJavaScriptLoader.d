@@ -1,0 +1,30 @@
+dependencies: \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTJavaScriptLoader.mm \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBundleType.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Portability.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/third-party/folly-2018.10.22.00/folly/portability/Config.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/third-party/folly-2018.10.22.00/folly/CPortability.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/YGValue.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTMultipartDataTask.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTMultipartStreamReader.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/React/Base/RCTPerformanceLogger.h

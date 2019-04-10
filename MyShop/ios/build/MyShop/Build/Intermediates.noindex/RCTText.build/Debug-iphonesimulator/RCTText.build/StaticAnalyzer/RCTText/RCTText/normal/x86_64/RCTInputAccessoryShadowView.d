@@ -1,0 +1,20 @@
+dependencies: \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/Libraries/Text/TextInput/RCTInputAccessoryShadowView.m \
+  /Users/hoangtran/Documents/ReactNative/MyShop/node_modules/react-native/Libraries/Text/TextInput/RCTInputAccessoryShadowView.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/yoga/YGValue.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/hoangtran/Documents/ReactNative/MyShop/ios/build/MyShop/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h
