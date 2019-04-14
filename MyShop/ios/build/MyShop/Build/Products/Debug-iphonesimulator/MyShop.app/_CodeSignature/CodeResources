@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		ogLxCjo48M5AailX25hgPTOWG+M=
+		vbJwnQJrI1peSnPpwRQYseXT6ok=
 		</data>
 		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
 		<data>
@@ -91,7 +91,7 @@
 		</data>
 		<key>PlugIns/MyShopTests.xctest/MyShopTests</key>
 		<data>
-		pPvidCE5Hf8QW0roSkdgRdivcq4=
+		Yzlw9PuEiUmESkzVEjCFu3LRdkw=
 		</data>
 		<key>PlugIns/MyShopTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -104,11 +104,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ogLxCjo48M5AailX25hgPTOWG+M=
+			vbJwnQJrI1peSnPpwRQYseXT6ok=
 			</data>
 			<key>hash2</key>
 			<data>
-			t1cZwqjp7rr+YzEb6TB/IdS2g81ogn/EGTJUGNhBGxQ=
+			KNdJKPQ1uZMRmpICx1KbrFa3V2nhP5BblFecnq3dtEI=
 			</data>
 		</dict>
 		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
@@ -304,11 +304,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pPvidCE5Hf8QW0roSkdgRdivcq4=
+			Yzlw9PuEiUmESkzVEjCFu3LRdkw=
 			</data>
 			<key>hash2</key>
 			<data>
-			VNHpizl/5k2+NQEWskjQGNJebvefPEww2eVT3d3h8s8=
+			0icbxsvSBRREQW2vl25xPnRJmrfdEn71z9qYMgYuo7M=
 			</data>
 		</dict>
 		<key>PlugIns/MyShopTests.xctest/_CodeSignature/CodeResources</key>

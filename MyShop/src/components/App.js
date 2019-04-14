@@ -8,9 +8,11 @@ import OrderHistory from './OrderHistory/OderHistory';
 import Menu from './Main/Menu';
 import Shop from './Main/Shop/Shop';
 import Home from '../components/Main/Shop/Home/Home';
+import Cart from '../components/Main/Shop/Cart/Cart';
 import Category from '../components/Main/Shop/Home/Categoty';
 import ListProduct from '../components/Main/Shop/ListProduct/ListProduct';
 import ProductDetail from '../components/Main/Shop/ProductDetail/ProductDetail';
+import SignIn from '../components/Authentication/SignIn';
 
 const MainNavigator = createStackNavigator(
   	{				
@@ -78,6 +80,18 @@ const MainNavigator = createStackNavigator(
 		},
 		ProductDetail: {
 			screen:	ProductDetail,	
+			navigationOptions:{
+				header: null,
+			}	
+		},
+		Cart: {
+			screen:	Cart,	
+			navigationOptions:{
+				header: null,
+			}	
+		},
+		SignIn: {
+			screen:	SignIn,	
 			navigationOptions:{
 				header: null,
 			}	

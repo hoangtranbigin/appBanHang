@@ -20,9 +20,6 @@ export default class TopProduct extends Component<Props> {
 	    	// dataSource: ds.cloneWithRows(this.props.topProducts),
 	    }
 	}
-	componentDidMount(){
-		// console.log(this.props.topProducts)
-	}
 	componentWillReceiveProps(nextProp){
 		const product = nextProp.topProducts
 		console.log(product)
@@ -36,7 +33,7 @@ export default class TopProduct extends Component<Props> {
 
 				<View style={{ flexDirection: 'row', justifyContent: 'space-around', flexWrap: 'wrap' }} >
 					{ this.props.topProducts.map(e => (
-						<TouchableOpacity onPress={() => this.props.navigation.navigate('ProductDetail',{name:e.name,id:e.id,price:e.price,color:e.color,material:e.material,description:e.description,images:e.images})} style={{shadowColor: '#2E272B', shadowOffset: {width:0, height:3}, shadowOpacity: 0.2, paddingBottom: 15  }} key={e.id}>
+						<TouchableOpacity onPress={() => this.props.navigation.navigate('ProductDetail',{product:e,name:e.name,id:e.id,price:e.price,color:e.color,material:e.material,description:e.description,images:e.images})} style={{shadowColor: '#2E272B', shadowOffset: {width:0, height:3}, shadowOpacity: 0.2, paddingBottom: 15  }} key={e.id}>
 							<Image source={{ uri: `${url}${e.images[0]}` }} style={{ width: imageWidth, height: imageHeight, marginBottom: 5 }} />
 							<Text style={{paddingLeft: 10, fontFamily: 'Avenir', color: '#AFAFAF', fontWeight: '500' }}>{e.name.toUpperCase()}</Text>
 							<Text style={{ paddingLeft:10, fontFamily: 'Avenir', color:'#662F90' }}>{e.price}$</Text> 

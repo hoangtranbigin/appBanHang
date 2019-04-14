@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import { 
-    View, Text, StyleSheet, Image, Dimensions, ScrollView, TouchableOpacity 
+    View, Text, StyleSheet, Image, Dimensions, ScrollView, TouchableOpacity, Button
 } from 'react-native';
+import backIcon from '../../../../media/appIcon/backList.png';
+import back from '../../../../media/appIcon/back.png';
+import global from '../../../../components/global';
 
-import img1 from '../../../../media/temp/sp5.jpeg';
-import img2 from '../../../../media/temp/sp4.jpeg';
-
-const back = require('../../../../media/appIcon/back.png');
 const cart = require('../../../../media/appIcon/cartfull.png');
 const url = 'http://localhost:8080/api/images/product/'
 
 export default class ProductDetail extends Component {
-    goBack() {
-        const { navigator } = this.props;
-        navigator.pop();
+    addThisProductToCart(product){
+        global.addProductToCart(product)
     }
     render() {
         const { navigation } = this.props;
+        const product = navigation.getParam('product', 'some default value');
         const name = navigation.getParam('name', 'some default value');
         const id = navigation.getParam('id', 'some default value');
         const price = navigation.getParam('price', 'some default value');
@@ -38,31 +37,32 @@ export default class ProductDetail extends Component {
                         <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
                             <Image style={backStyle} source={back} />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <Text style={{fontFamily: 'Avenir',color: '#34B089',fontSize: 20}}>Product detail</Text>
+                        <TouchableOpacity onPress={()=> this.addThisProductToCart(product)}>
                             <Image style={cartStyle} source={cart} />
                         </TouchableOpacity>
                     </View>
                     <View style={imageContainer}>
                         <ScrollView style={{ flexDirection: 'row', padding: 10, height: swiperHeight }} horizontal >
-                            <Image source={{ uri: `${url}${images[0]}` }} style={productImageStyle} />
-                            <Image source={{ uri: `${url}${images[1]}` }} style={productImageStyle} />
+                            <Image source={{ uri: `${url}${product.images[0]}` }} style={productImageStyle} />
+                            <Image source={{ uri: `${url}${product.images[1]}` }} style={productImageStyle} />
                         </ScrollView>
                     </View>
                     <View style={footer}>
                         <View style={titleContainer}>
                             <Text style={textMain}>
-                                <Text style={textBlack}>{name.toUpperCase()}</Text>
+                                <Text style={textBlack}>{product.name.toUpperCase()}</Text>
                                 <Text style={textHighlight}> / </Text>
-                                <Text style={textSmoke}>{price}$</Text>
+                                <Text style={textSmoke}>{product.price}$</Text>
                             </Text>
                         </View>
                         <View style={descContainer}>
-                            <Text style={descStyle}>{description}</Text>
+                            <Text style={descStyle}>{product.description}</Text>
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingTop: 15 }}>
-                                <Text style={txtMaterial}>Material {material}</Text>
+                                <Text style={txtMaterial}>Material {product.material}</Text>
                                 <View style={{ flexDirection: 'row' }} >
-                                    <Text style={txtColor}>Color {color}</Text>
-                                    <View style={{ height: 15, width: 15, backgroundColor: color.toLowerCase(), borderRadius: 15, marginLeft: 10, borderWidth: 1, borderColor: '#C21C70' }} />
+                                    <Text style={txtColor}>Color {product.color}</Text>
+                                    <View style={{ height: 15, width: 15, backgroundColor: product.color.toLowerCase(), borderRadius: 15, marginLeft: 10, borderWidth: 1, borderColor: '#C21C70' }} />
                                 </View>
                             </View>
                         </View>
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 15,
         paddingTop: 30,
-        marginBottom: -80
     },
     cartStyle: {
         width: 25,
@@ -110,14 +109,15 @@ const styles = StyleSheet.create({
         height: width / 2
     },
     footer: {
-        flex: 6
+        flex: 6,
     },
     imageContainer: {
         flex: 6,
         alignItems: 'center',
         flexDirection: 'row',
         marginHorizontal: 10,
-        marginBottom: -50
+        marginTop:-0,
+        marginBottom: -50,
     },
     textMain: {
         paddingLeft: 20,

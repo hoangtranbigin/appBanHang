@@ -1,51 +1,150 @@
-import React, {Component} from 'react';
-import { Button, Animated, Easing } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import SearchView from './SearchView';
-import ProductDetail from '../ProductDetail/ProductDetail';
+import React, { Component } from 'react';
+import {
+    StyleSheet, Text, TouchableOpacity,
+    ListView, View, Image, Dimensions
+} from 'react-native';
+import global from '../../../global';
 
-const SearchNavigator = createStackNavigator(
-  	{				
-		SearchView: {
-			screen:	SearchView,
-			navigationOptions:{
-				header: null,
-			}
-		},
-		ProductDetail: {
-			screen:	ProductDetail,
-			navigationOptions:{
-				header: null,
-			}
-		},
-  	},
-  	{
-	    initialRouteName: "SearchView",
-	    transitionConfig: () => ({
-		      transitionSpec: {
-		        duration: 300,
-		        easing: Easing.out(Easing.poly(4)),
-		        timing: Animated.timing,
-		      },
-	      	screenInterpolator: sceneProps => {
-                const {layout, position, scene} = sceneProps;
-                const {index} = scene;
+const url = 'http://localhost:8080/api/images/product/';
 
-                const width = layout.initWidth;
-                const translateX = position.interpolate({
-                    inputRange: [index - 1, index, index + 1],
-                    outputRange: [width, 0, 0],
-                });
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+}
 
-                const opacity = position.interpolate({
-                    inputRange: [index - 1, index - 0.99, index],
-                    outputRange: [0, 1, 1],
-                });
+class SearchView extends Component {
+    constructor(props) {
+        super(props);
+        const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+        this.state = {
+            listProduct: ds
+        };
+        global.setArraySearch = this.setSearchArray.bind(this);
+    }
 
-                return {opacity, transform: [{translateX: translateX}]};
-            },
-	    })
-	}
-);
+    setSearchArray(arrProduct) {
+        this.setState({ listProduct: this.state.listProduct.cloneWithRows(arrProduct) });
+    }
+    render() {
+        const { navigation } = this.props;
+        const {
+            productStyle, mainRight, txtMaterial, txtColor,
+            txtName, txtPrice, productImage,
+            txtShowDetail, showDetailContainer, wrapper
+        } = styles;
+        return (
+            <View style={wrapper}>
+                <ListView
+                    dataSource={this.state.listProduct}
+                    renderRow={productItem => (
+                        <View style={productStyle}>
+                            <Image source={{ uri: `${url}${productItem.images[0]}` }} style={productImage} />
+                            <View style={mainRight}>
+                                <Text style={txtName}>{toTitleCase(productItem.name)}</Text>
+                                <Text style={txtPrice}>{productItem.price}$</Text>
+                                <Text style={txtMaterial}>Material {productItem.material}</Text>
+                                <View style={{ flexDirection: 'row' }} >
+                                    <Text style={txtColor}>Color {productItem.color}</Text>
+                                    <View
+                                        style={{
+                                            height: 15,
+                                            width: 15,
+                                            backgroundColor: 'white',
+                                            borderRadius: 15,
+                                            marginLeft: 10
+                                        }}
+                                    />
+                                </View>
+                                <TouchableOpacity style={showDetailContainer} onPress={() => this.props.navigation.navigate('ProductDetail',{product:productItem})}>
+                                    <Text style={txtShowDetail}>SHOW DETAILS</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    )}
+                />
+            </View>
+        );
+    }
+}
 
-export default createAppContainer(SearchNavigator);
+const { width } = Dimensions.get('window');
+const imageWidth = width / 4;
+const imageHeight = (imageWidth * 452) / 361;
+
+const styles = StyleSheet.create({
+    wrapper: {
+        backgroundColor: '#DFDFDF',
+        flex: 1,
+        marginBottom: 15
+    },
+    productStyle: {
+        flexDirection: 'row',
+        margin: 10,
+        padding: 10,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 2,
+        shadowColor: '#3B5458',
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.2
+    },
+    productImage: {
+        width: imageWidth,
+        height: imageHeight,
+        flex: 1,
+        resizeMode: 'center'
+    },
+    mainRight: {
+        flex: 3,
+        justifyContent: 'space-between'
+    },
+    productController: {
+        flexDirection: 'row'
+    },
+    numberOfProduct: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    },
+    txtName: {
+        paddingLeft: 20,
+        color: '#A7A7A7',
+        fontSize: 20,
+        fontWeight: '400',
+        fontFamily: 'Avenir'
+    },
+    txtPrice: {
+        paddingLeft: 20,
+        color: '#C21C70',
+        fontSize: 15,
+        fontWeight: '400',
+        fontFamily: 'Avenir'
+    },
+    txtColor: {
+        paddingLeft: 20,
+        color: 'black',
+        fontSize: 15,
+        fontWeight: '400',
+        fontFamily: 'Avenir'
+    },
+    txtMaterial: {
+        paddingLeft: 20,
+        color: 'black',
+        fontSize: 15,
+        fontWeight: '400',
+        fontFamily: 'Avenir'
+    },
+    txtShowDetail: {
+        color: '#C21C70',
+        fontSize: 10,
+        fontWeight: '400',
+        fontFamily: 'Avenir',
+        textAlign: 'right',
+    },
+    showDetailContainer: {
+        flexDirection: 'row',
+        position: 'absolute',
+        alignSelf: 'flex-end',
+        marginTop: 100
+    }
+});
+
+export default SearchView;

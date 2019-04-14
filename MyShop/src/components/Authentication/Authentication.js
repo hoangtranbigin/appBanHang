@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { Text, View, Button, TouchableOpacity, Image, ImageBackground, StyleSheet, TextInput } from 'react-native';
 import icLogo from '../../media/appIcon/ic_logo.png';
-import icBack from '../../media/appIcon/back_white.png'
-import bg from '../../media/temp/bg.jpeg'
+import icBack from '../../media/appIcon/back_white.png';
+import bg from '../../media/temp/bg.jpeg';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 export default class Authentication extends Component<Props> {
 	constructor(props) {
@@ -11,6 +13,9 @@ export default class Authentication extends Component<Props> {
 	      	isSignin: true,
 	    }
 	}
+	gotoSignIn() {
+        this.setState({ isSignIn:true }, () => alert(this.state.isSignin));
+    }
 	signIn(){
 		this.setState({ isSignin:true })
 	}
@@ -18,27 +23,8 @@ export default class Authentication extends Component<Props> {
 		this.setState({ isSignin:false })
 	}
 	render() {
-		const signinJSX = (
-			<View style={{paddingLeft: 40, paddingRight: 40}}>
-				<TextInput style={{ height: 45, backgroundColor:'#fff', borderRadius: 20, marginBottom: 10, paddingLeft: 30, fontSize:15 }} placeholder='Enter your email' />
-				<TextInput style={{ height: 45, backgroundColor:'#fff', borderRadius: 20, marginBottom: 10, paddingLeft: 30, fontSize:15 }} placeholder='Enter your password' />
-				<TouchableOpacity style={{ height:45, borderRadius:20, borderWidth:1, borderColor:'#fff', alignItems:'center',justifyContent:'center' }}>
-					<Text style={{fontSize:15, fontFamily:'Avenir', fontWeight: '400', color:'#fff' }}>SIGN IN</Text>
-				</TouchableOpacity>
-			</View>
-		)
-		const signupJSX = (
-			<View style={{paddingLeft: 40, paddingRight: 40}}>
-				<TextInput style={{ height: 45, backgroundColor:'#fff', borderRadius: 20, marginBottom: 10, paddingLeft: 30, fontSize:15 }} placeholder='Enter your name' />
-				<TextInput style={{ height: 45, backgroundColor:'#fff', borderRadius: 20, marginBottom: 10, paddingLeft: 30, fontSize:15 }} placeholder='Enter your email' />
-				<TextInput style={{ height: 45, backgroundColor:'#fff', borderRadius: 20, marginBottom: 10, paddingLeft: 30, fontSize:15 }} placeholder='Enter your password' />
-				<TextInput style={{ height: 45, backgroundColor:'#fff', borderRadius: 20, marginBottom: 10, paddingLeft: 30, fontSize:15 }} placeholder='Re-Enter your password' />
-				<TouchableOpacity style={{ height:45, borderRadius:20, borderWidth:1, borderColor:'#fff', alignItems:'center',justifyContent:'center' }}>
-					<Text style={{fontSize:15, fontFamily:'Avenir', fontWeight: '400', color:'#fff' }}>SIGN UP</Text>
-				</TouchableOpacity>
-			</View>
-		)
-		const mainJSX = this.state.isSignin ? signinJSX : signupJSX;
+		const { navigation } = this.props;
+		const mainJSX = this.state.isSignin ? <SignIn navigation={navigation} /> : <SignUp gotoSignIn={this.signIn.bind(this)} />;
 		return (
 			<ImageBackground source={bg} style={{width: '100%', height: '100%' }}>
 				<View style={{ position: 'absolute', top: 0, left:0, height: '100%', width: '100%', backgroundColor: 'rgba(36,36,36,0.8)', justifyContent: 'space-between' }}>
